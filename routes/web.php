@@ -33,5 +33,7 @@ Route::get('/', function(){
 });
 Route::get('article/{n}', function($n)
 {
-	return view('article')->with('numero', $n);
+	// return view('article')->with('numero', $n); //method 1
+	// return view('article')->withNumero($n);//method 2
+	return view('article', ['numero' => $n]);//method 3
 })->where('n', '[0-9]+');
