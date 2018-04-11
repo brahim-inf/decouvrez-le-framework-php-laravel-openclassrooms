@@ -52,3 +52,7 @@ Route::post('users', 'UserController@postInfos');
 //Routes pour le formulaire contact
 Route::get('contact', 'ContactController@getForm');
 Route::post('contact', 'ContactController@postForm');
+
+//route pour uploader les images
+Route::get('image', 'ImageController@getForm');
+Route::post('image', 'ImageController@postForm');
