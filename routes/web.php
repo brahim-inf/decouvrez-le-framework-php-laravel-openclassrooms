@@ -44,3 +44,7 @@ Route::get('facture/{n}', function($n){
 
 Route::get('/', 'WelcomeController@index');
 Route::get('/article/{n}', 'ArticleController@show')->where('n', '[0-9]+');
+
+// Routes pour le formulaire contact
+Route::get('users','UserController@getInfos');
+Route::post('users', 'UserController@postInfos');
