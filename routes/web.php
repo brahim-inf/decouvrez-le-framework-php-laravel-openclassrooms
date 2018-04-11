@@ -41,3 +41,5 @@ Route::get('article/{n}', function($n)
 Route::get('facture/{n}', function($n){
 	return view('facture')->withNumero($n);
 })->where('n', '[0-9]+');
+
+Route::get('/', 'WelcomeController@index');
