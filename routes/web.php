@@ -31,3 +31,7 @@ Route::get('{n}', function($n) {
 Route::get('/', function(){
 	return view('vue1');
 });
+Route::get('article/{n}', function($n)
+{
+	return view('article')->with('numero', $n);
+})->where('n', '[0-9]+');
