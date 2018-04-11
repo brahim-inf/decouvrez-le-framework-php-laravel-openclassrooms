@@ -10,8 +10,8 @@ class UserController extends Controller
     {
     	return view('infos');
     }
-    public function postInfos()
+    public function postInfos(Request $Request)
     {
-    	
+    	return 'Le nom est '.$Request->input('nom');
     }
 }
