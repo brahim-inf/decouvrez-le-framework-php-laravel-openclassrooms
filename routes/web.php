@@ -28,3 +28,6 @@ Route::get('/', ['as' => 'home', function()
 Route::get('{n}', function($n) { 
     return response('Je suis la page  numero' . $n . ' !', 200);
 })->where('n', '[1-3]');
+Route::get('/', function(){
+	return view('vue1');
+});
