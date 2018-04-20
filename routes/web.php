@@ -60,3 +60,6 @@ Route::post('image', 'ImageController@postForm');
 //route pour les email
 Route::get('email', 'EmailController@getForm');
 Route::post('email', ['uses' => 'EmailController@postForm','as' => 'storeEmail']);
+
+//route for user
+Route::resource('user', 'UserController');
