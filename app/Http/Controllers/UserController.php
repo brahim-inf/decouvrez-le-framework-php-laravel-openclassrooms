@@ -51,6 +51,7 @@ class UserController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
+        $this->setAdmin($request);
         $user = $this->userRepository->store($request->all());
 
         return redirect('user')->withOK("L'utilisateur ".$user->name. " a été créé.");
@@ -107,5 +108,13 @@ class UserController extends Controller
         $this->userRepository->destroy($id);
 
         return back();
+    }
+
+    private function setAdmin($request)
+    {
+        if(!$request->has('admin'))
+        {
+            $request->merge(['admin' => 0]);
+        }       
     }
 }
